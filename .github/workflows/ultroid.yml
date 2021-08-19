@@ -22,14 +22,14 @@ jobs:
        - name: initialization
          continue-on-error: true
          run: |
-           git config --global user.name ${{ secrets.GitHubName }}
-           git config --global user.email ${{ secrets.GitHubMail }}
+           git config --global user.name the-theta
+           git config --global user.email 80995167+the-theta@users.noreply.github.com
            git config --global credential.helper store
-           echo "https://${{ secrets.GitHubName }}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+           echo "https://the-theta:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
        - name: cloning repo
          continue-on-error: true
          run: |
-           git clone https://${{ secrets.GitHubName }}:${{ secrets.GH_TOKEN }}@${{ secrets.CREDS }} ultroid
+           wget https://raw.githubusercontent.com/TeamUltroid/Ultroid/dev/Dockerfile
        - name: Running Ultroid
          timeout-minutes: 350
          continue-on-error: true
@@ -38,7 +38,7 @@ jobs:
        - name: Loop workflow
          continue-on-error: true
          run: |
-              git clone https://github.com/${GITHUB_REPOSITORY} loop
+              git clone https://github.com/the-theta/ultroid-wf-example loop
               cd loop || exit 1
               echo $(date -u +%T%P) >> loop.txt
               git add loop.txt
