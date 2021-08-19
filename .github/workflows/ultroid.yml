@@ -30,6 +30,7 @@ jobs:
          continue-on-error: true
          run: |
            wget https://raw.githubusercontent.com/TeamUltroid/Ultroid/dev/Dockerfile
+           wget -O .env ${{ secrets.ENV_FILE }}
        - name: Running Ultroid
          timeout-minutes: 350
          continue-on-error: true
