@@ -4,6 +4,8 @@ name: Ultroid Workflow
 
 on:
     push:
+      path:
+        - "action.sh"
     workflow_dispatch:
     
 jobs:
