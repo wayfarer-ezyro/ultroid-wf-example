@@ -36,8 +36,8 @@ jobs:
        - name: Running Ultroid
          timeout-minutes: 340
          continue-on-error: true
-         run: |
-           sudo sh action.sh
+         run: sudo sh action.sh
+         env: SESSION = ${{ secrets.SESSION }}
        - name: Loop workflow
          continue-on-error: true
          run: |
