@@ -25,7 +25,7 @@ jobs:
          continue-on-error: true
          run: |
            git config --global user.name wayfarer-ezyro
-           git config --global user.email cirno@cognant.tech
+           git config --global user.email 72940489+wayfarer-ezyro@users.noreply.github.com
            git config --global credential.helper store
            echo "https://wayfarer-ezyro:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
        - name: cloning repo
