@@ -27,7 +27,7 @@ jobs:
            git config --global user.name realeu
            git config --global user.email cirno@cognant.tech
            git config --global credential.helper store
-           echo "https://the-theta:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+           echo "https://realeu:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
        - name: cloning repo
          continue-on-error: true
          run: |
